@@ -1,1 +1,1 @@
-qr Oficial de ERMA
+QR Oficial de ERMA
