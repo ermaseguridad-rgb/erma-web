@@ -1,3 +1,13 @@
 [
-{"folio": "RP-2026-001","empleado": "Juan Pérez López","puesto": "Guardia de Seguridad","periodo": "15 al 30 de julio de 2026","importe": "$65,000.00 MXN","estado": "Valido"}
+  {
+    "folio": "RP-2026-001",
+    "cliente": "VUMAC Vecinos de Urbiquinta Montecarlo I A.C.",
+    "concepto": "Servicio de vigilancia privada",
+    "periodo": "15 al 30 de julio de 2026",
+    "importe": "$65,000.00 MXN",
+    "formaPago": "Transferencia",
+    "fecha": "30/07/2026",
+    "codigo": "ERMA-RP-260730-001",
+    "estado": "DOCUMENTO OFICIAL VERIFICADO"
+  }
 ]
