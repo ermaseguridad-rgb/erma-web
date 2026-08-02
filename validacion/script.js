@@ -1,6 +1,6 @@
 const params = new URLSearchParams(window.location.search);
 const folioBuscado = params.get("folio");
-
+alert(Script cargado");
 fetch("recibos.json")
   .then(response => response.json())
   .then(datos => {
