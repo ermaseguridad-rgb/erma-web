@@ -82,3 +82,49 @@ import {
   collection,
   addDoc
 } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+
+    async function crearRecibo() {
+
+    const cliente = document.getElementById("cliente").value;
+    const periodo = document.getElementById("periodo").value;
+    const importe = document.getElementById("importe").value;
+    const concepto = document.getElementById("concepto").value;
+    const formaPago = document.getElementById("formaPago").value;
+
+    const fecha = new Date().toLocaleDateString("es-MX");
+
+    const codigo = "ERMA-" + Date.now();
+
+    try {
+
+    await addDoc(collection(db, "recibos"), {
+
+        cliente,
+        periodo,
+        importe,
+        concepto,
+        formaPago,
+        fecha,
+        codigo,
+        estado: "AUTÉNTICO"
+
+    });
+
+    alert("✅ Recibo guardado correctamente.");
+
+     } catch (error) {
+
+    console.error(error);
+
+    alert("❌ " + error.message);
+
+}
+
+}
+
+window.crearRecibo = crearRecibo;
+
+    </script>
+
+</body>
+</html>
