@@ -23,13 +23,23 @@ fetch("recibos.json")
     document.getElementById("estado").textContent = recibo.estado;
 
     // Generar QR automáticamente
-    document.getElementById("qrRecibo").innerHTML =
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(window.location.href)}" alt="Código QR">;
+    const urlRecibo = window.location.href;
 
+    new QRCode(document.getElementById("qrRecibo"), {
+      text: urlRecibo,
+      width: 180,
+      height: 180,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H
+    });
+
+    // Botón Sitio Oficial
     document.getElementById("btnSitio").onclick = () => {
       window.open("https://ermaseguridad-rgb.github.io/erma-web/", "_blank");
     };
 
+    // Botón Descargar PDF
     document.getElementById("btnPDF").onclick = () => {
       window.print();
     };
