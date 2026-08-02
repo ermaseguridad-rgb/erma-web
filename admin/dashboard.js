@@ -7,6 +7,8 @@ import {
 
 console.log("Dashboard ERMA iniciado");
 
+console.log("VERSIÓN NUEVA 02-08-2026");
+
 async function cargarDashboard() {
 
     try {
