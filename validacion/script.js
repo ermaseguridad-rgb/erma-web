@@ -12,9 +12,14 @@ fetch("recibos.json")
       return;
     }
 
-    document.getElementById("folio").textContent = recibo.folio;
-    document.getElementById("periodo").textContent = recibo.periodo;
-    document.getElementById("importe").textContent = recibo.importe;
+   document.getElementById("folio").textContent = recibo.folio;
+document.getElementById("cliente").textContent = recibo.cliente;
+document.getElementById("concepto").textContent = recibo.concepto;
+document.getElementById("periodo").textContent = recibo.periodo;
+document.getElementById("importe").textContent = recibo.importe;
+document.getElementById("formaPago").textContent = recibo.formaPago;
+document.getElementById("fecha").textContent = recibo.fecha;
+document.getElementById("codigo").textContent = recibo.codigo;
 
   })
   .catch(error => console.log(error));
