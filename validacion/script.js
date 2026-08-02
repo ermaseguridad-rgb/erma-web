@@ -21,27 +21,18 @@ fetch("recibos.json")
     document.getElementById("fecha").textContent = recibo.fecha;
     document.getElementById("codigo").textContent = recibo.codigo;
     document.getElementById("estado").textContent = recibo.estado;
-    // Generar QR automáticamente
-const urlRecibo = window.location.href;
 
-new QRCode(document.getElementById("qrRecibo"), {
-    text: urlRecibo,
-    width: 180,
-    height: 180,
-    colorDark: "#000000",
-    colorLight: "#ffffff",
-    correctLevel: QRCode.CorrectLevel.H
-});
-    document.getElementById("qrRecibo").src =
-"https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" +
-encodeURIComponent(window.location.href);
-  })
- .catch(error => console.log(error));
+    // Generar QR automáticamente
+    document.getElementById("qrRecibo").innerHTML =
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(window.location.href)}" alt="Código QR">;
+
     document.getElementById("btnSitio").onclick = () => {
-        window.open("https://ermaseguridad-rgb.github.io/erma-web/","_blank");
+      window.open("https://ermaseguridad-rgb.github.io/erma-web/", "_blank");
     };
 
     document.getElementById("btnPDF").onclick = () => {
-        window.print();
+      window.print();
     };
 
+  })
+  .catch(error => console.error(error));
