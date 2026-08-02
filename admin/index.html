@@ -1,237 +1,100 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ERMA | Panel Administrador</title>
+<title>ERMA Seguridad | Panel Administrativo</title>
 
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
-}
-
-body{
-background:#f3f5f8;
-}
-
-header{
-
-background:#111;
-
-color:white;
-
-padding:35px;
-
-text-align:center;
-
-border-bottom:5px solid #d4af37;
-
-}
-
-header h1{
-
-font-size:38px;
-
-}
-
-header p{
-
-margin-top:8px;
-
-color:#d4af37;
-
-font-weight:bold;
-
-letter-spacing:2px;
-
-}
-
-main{
-
-max-width:1000px;
-
-margin:40px auto;
-
-padding:20px;
-
-}
-
-.card{
-
-background:white;
-
-padding:30px;
-
-border-radius:18px;
-
-box-shadow:0 10px 25px rgba(0,0,0,.15);
-
-}
-
-.card h2{
-
-margin-bottom:25px;
-
-color:#222;
-
-}
-
-label{
-
-display:block;
-
-margin-top:18px;
-
-font-weight:bold;
-
-}
-
-input{
-
-width:100%;
-
-padding:12px;
-
-margin-top:8px;
-
-border:1px solid #ccc;
-
-border-radius:10px;
-
-font-size:16px;
-
-}
-
-button{
-
-margin-top:30px;
-
-width:100%;
-
-padding:16px;
-
-background:#0b2345;
-
-color:white;
-
-border:none;
-
-border-radius:12px;
-
-font-size:18px;
-
-cursor:pointer;
-
-}
-
-button:hover{
-
-background:#d4af37;
-
-color:#0b2345;
-
-}
-
-</style>
+<link rel="stylesheet" href="../css/style.css">
 
 </head>
 
 <body>
 
-<header>
+<header class="encabezado">
 
-<h1>ERMA Seguridad Privada</h1>
+    <h1>ERMA Seguridad Privada</h1>
 
-<p>PANEL DE ADMINISTRACIÓN</p>
+    <p>Panel Administrativo</p>
 
 </header>
 
-<main>
+<main class="contenedor">
 
-<div class="card">
+<section class="tarjeta">
 
-<h2>Nuevo recibo</h2>
+<h2>Nuevo Recibo</h2>
+
+<form id="formRecibo">
 
 <label>Cliente</label>
-<input id="cliente">
+<input
+type="text"
+id="cliente"
+placeholder="Nombre del cliente"
+required>
 
 <label>Periodo</label>
-<input id="periodo">
-
-<label>Importe</label>
-<input id="importe">
+<input
+type="text"
+id="periodo"
+placeholder="Ej. 01 al 15 de agosto de 2026"
+required>
 
 <label>Concepto</label>
-<input id="concepto">
+<input
+type="text"
+id="concepto"
+placeholder="Servicio realizado"
+required>
+
+<label>Importe</label>
+<input
+type="text"
+id="importe"
+placeholder="$0.00"
+required>
 
 <label>Forma de pago</label>
-<input id="formaPago">
 
-<button onclick="crearRecibo()">
-Crear recibo
+<select id="formaPago">
+
+<option>Efectivo</option>
+<option>Transferencia</option>
+<option>Depósito</option>
+<option>Cheque</option>
+
+</select>
+
+<div class="botones">
+
+<button
+type="submit">
+
+Guardar Recibo
+
+</button>
+
+<button
+type="reset">
+
+Limpiar
+
 </button>
 
 </div>
 
+</form>
+
+</section>
+
 </main>
 
-<script type="module">
-
-import { db } from "../firebase.js";
-
-import {
-collection,
-addDoc
-} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
-
-window.crearRecibo = async function(){
-
-const cliente = document.getElementById("cliente").value;
-const periodo = document.getElementById("periodo").value;
-const importe = document.getElementById("importe").value;
-const concepto = document.getElementById("concepto").value;
-const formaPago = document.getElementById("formaPago").value;
-
-const fecha = new Date().toLocaleDateString("es-MX");
-
-const codigo =
-"ERMA-" + Date.now();
-
-try{
-
-await addDoc(collection(db,"recibos"),{
-
-cliente,
-periodo,
-importe,
-concepto,
-formaPago,
-fecha,
-codigo,
-estado:"AUTÉNTICO"
-
-});
-
-alert("✅ Recibo guardado correctamente en Firebase.");
-
-}
-  
-catch(error){
-
-console.error(error);
-
-alert(error.message);
-
-}
-
-}
-
-</script>
+<script type="module" src="../js/admin.js"></script>
 
 </body>
+
 </html>
