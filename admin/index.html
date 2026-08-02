@@ -97,8 +97,10 @@ import {
 
     try {
 
-    await addDoc(collection(db, "recibos"), {
-
+    await addDoc(
+      collection(db, "recibos"),
+      
+    {
         cliente,
         periodo,
         importe,
