@@ -21,7 +21,8 @@ fetch("recibos.json")
     document.getElementById("fecha").textContent = recibo.fecha;
     document.getElementById("codigo").textContent = recibo.codigo;
     document.getElementById("estado").textContent = recibo.estado;
-
+  })
+ .catch(error => console.log(error));
     document.getElementById("btnSitio").onclick = () => {
         window.open("https://ermaseguridad-rgb.github.io/erma-web/","_blank");
     };
@@ -30,5 +31,3 @@ fetch("recibos.json")
         window.print();
     };
 
-  })
-  .catch(error => console.error(error));
