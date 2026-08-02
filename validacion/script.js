@@ -23,3 +23,10 @@ document.getElementById("codigo").textContent = recibo.codigo;
 document.getElementById("estado").textContent = recibo.estado;
   })
   .catch(error => console.log(error));
+document.getElementById("btnSitio").addEventListener("click", () => {
+    window.open("https://ermaseguridad-rgb.github.io/erma-web/", "_blank");
+});
+
+document.getElementById("btnPDF").addEventListener("click", () => {
+    window.print();
+});
