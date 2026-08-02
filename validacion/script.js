@@ -20,6 +20,6 @@ document.getElementById("importe").textContent = recibo.importe;
 document.getElementById("formaPago").textContent = recibo.formaPago;
 document.getElementById("fecha").textContent = recibo.fecha;
 document.getElementById("codigo").textContent = recibo.codigo;
-
+document.getElementById("estado").textContent = recibo.estado;
   })
   .catch(error => console.log(error));
