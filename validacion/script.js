@@ -21,6 +21,17 @@ fetch("recibos.json")
     document.getElementById("fecha").textContent = recibo.fecha;
     document.getElementById("codigo").textContent = recibo.codigo;
     document.getElementById("estado").textContent = recibo.estado;
+    // Generar QR automáticamente
+const urlRecibo = window.location.href;
+
+new QRCode(document.getElementById("qrRecibo"), {
+    text: urlRecibo,
+    width: 180,
+    height: 180,
+    colorDark: "#000000",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.H
+});
     document.getElementById("qrRecibo").src =
 "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" +
 encodeURIComponent(window.location.href);
