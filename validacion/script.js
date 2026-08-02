@@ -12,7 +12,7 @@ fetch("recibos.json")
       return;
     }
 
-   document.getElementById("folio").textContent = recibo.folio;
+document.getElementById("folio").textContent = recibo.folio;
 document.getElementById("cliente").textContent = recibo.cliente;
 document.getElementById("concepto").textContent = recibo.concepto;
 document.getElementById("periodo").textContent = recibo.periodo;
