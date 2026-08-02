@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ERMA Seguridad | Panel Administrativo</title>
+<title>ERMA | Panel Administrativo</title>
 
 <link rel="stylesheet" href="../css/style.css">
 
@@ -16,85 +16,60 @@
 
 <header class="encabezado">
 
-    <h1>ERMA Seguridad Privada</h1>
+<h1>ERMA Seguridad Privada</h1>
 
-    <p>Panel Administrativo</p>
+<p>Panel Administrativo</p>
 
 </header>
 
-<main class="contenedor">
+<main>
 
-<section class="tarjeta">
+<section class="contenedor">
 
-<h2>Nuevo Recibo</h2>
+<h2>Nuevo recibo</h2>
 
 <form id="formRecibo">
 
-<label>Cliente</label>
+<label for="cliente">Cliente</label>
 <input
 type="text"
 id="cliente"
-placeholder="Nombre del cliente"
 required>
 
-<label>Periodo</label>
+<label for="periodo">Periodo</label>
 <input
 type="text"
 id="periodo"
-placeholder="Ej. 01 al 15 de agosto de 2026"
 required>
 
-<label>Concepto</label>
+<label for="importe">Importe</label>
+<input
+type="number"
+id="importe"
+required>
+
+<label for="concepto">Concepto</label>
 <input
 type="text"
 id="concepto"
-placeholder="Servicio realizado"
 required>
 
-<label>Importe</label>
+<label for="formaPago">Forma de pago</label>
 <input
 type="text"
-id="importe"
-placeholder="$0.00"
+id="formaPago"
 required>
 
-<label>Forma de pago</label>
-
-<select id="formaPago">
-
-<option>Efectivo</option>
-<option>Transferencia</option>
-<option>Depósito</option>
-<option>Cheque</option>
-
-</select>
-
-<div class="botones">
-
 <button
-type="submit">
+type="button"
+onclick="crearRecibo()">
 
-Guardar Recibo
+Crear recibo
 
 </button>
-
-<button
-type="reset">
-
-Limpiar
-
-</button>
-
-</div>
 
 </form>
 
 </section>
 
 </main>
-
-<script type="module" src="../js/admin.js"></script>
-
-</body>
-
-</html>
