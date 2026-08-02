@@ -21,6 +21,9 @@ fetch("recibos.json")
     document.getElementById("fecha").textContent = recibo.fecha;
     document.getElementById("codigo").textContent = recibo.codigo;
     document.getElementById("estado").textContent = recibo.estado;
+    document.getElementById("qrRecibo").src =
+"https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" +
+encodeURIComponent(window.location.href);
   })
  .catch(error => console.log(error));
     document.getElementById("btnSitio").onclick = () => {
