@@ -37,7 +37,7 @@ body{
 }
 
 .tarjeta{
-    background:181818;
+    background:#181818;
     border-radius:18px;
     padding:35px;
     box-shadow:0 10px 30px rgba(0,0,0,.12);
@@ -60,7 +60,7 @@ select{
     width:100%;
     padding:14px;
     border:1px solid #333;
-    blackground:#111;
+    background:#111;
     color:white;
     border-radius:10px;
     font-size:16px;
@@ -89,21 +89,21 @@ button{
 }
 
 button[type="submit"]{
-    background:#0b2345;
-    color:white;
+    background:#d4af37;
+    color:000;
 }
 
 button[type="submit"]:hover{
-    background:#163968;
+    background:#c29d28;
 }
 
 button[type="reset"]{
-    background:#d4af37;
-    color:#d4af37;
+    background:#333;
+    color:#white;
 }
 
 button[type="reset"]:hover{
-    background:#c29d28;
+    background:#444;
 }
 
 @media(max-width:700px){
