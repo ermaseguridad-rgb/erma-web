@@ -139,3 +139,33 @@ button[type="reset"]:hover{
     display:flex;
     flex-direction:column;
 }
+
+.tarjeta{
+    background:#ffffff;
+    color:#222;
+    border-radius:18px;
+    padding:40px;
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+.subtitulo{
+    color:#777;
+    margin-bottom:30px;
+}
+
+.tarjeta label{
+    color:#222;
+}
+
+.tarjeta input,
+.tarjeta select{
+    background:#fff;
+    color:#222;
+    border:1px solid #d8d8d8;
+}
+
+.tarjeta input:focus,
+.tarjeta select:focus{
+    border-color:#d4af37;
+    box-shadow:0 0 0 4px rgba(212,175,55,.15);
+}
