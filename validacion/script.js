@@ -24,9 +24,9 @@ document.getElementById("estado").textContent = recibo.estado;
   })
   .catch(error => console.log(error));
 document.getElementById("btnSitio").addEventListener("click", () => {
-   alert("El botón Sitio funciona");
+    window.open("https://ermaseguridad-rgb.github.io/erma-web/", "_blank");
 });
 
 document.getElementById("btnPDF").addEventListener("click", () => {
-    alert("El botón PDF funciona");
+    window.print();
 });
