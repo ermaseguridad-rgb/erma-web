@@ -1,4 +1,4 @@
-[11:04 p.m., 1/8/2026] Claudia Silva 💋: const params = new URLSearchParams(window.location.search);
+const params = new URLSearchParams(window.location.search);
 const folioBuscado = params.get("folio");
 
 fetch("recibos.json")
