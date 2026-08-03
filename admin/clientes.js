@@ -136,18 +136,7 @@ cargarClientes();
 
         const cliente = doc.data();
 
-document.querySelectorAll(".btnEditar").forEach((boton) => {
-
-    boton.addEventListener("click", () => {
-
-        const id = boton.dataset.id;
-
-        alert("Editar cliente: " + id);
-
-    });
-
-});
-        
+ 
         tbody.innerHTML += `
             <tr>
                 <td>${doc.id}</td>
