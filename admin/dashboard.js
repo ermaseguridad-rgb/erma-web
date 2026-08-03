@@ -3,7 +3,7 @@ import { db } from "../firebase.js/firebase.js";
 import {
   collection,
   getDocs
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
 console.log("Dashboard ERMA iniciado");
 
