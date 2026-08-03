@@ -39,6 +39,20 @@ window.onload = function () {
 
     });
 
+    const btnGuardar = document.getElementById("btnGuardar");
+
+    if (btnGuardar) {
+
+        btnGuardar.addEventListener("click", () => {
+
+            alert("Cliente guardado correctamente.");
+
+            modal.style.display = "none";
+
+        });
+
+    }
+
     console.log("✅ ERMA OS - Clientes iniciado correctamente");
 
 };
