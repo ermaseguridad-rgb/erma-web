@@ -142,9 +142,11 @@ cargarClientes();
                 <td>${cliente.nombre}</td>
                 <td>${cliente.estado}</td>
                 <td>
-                   <button>Editar</button>
+                  <button class="btnEditar" data-id="${doc.id}">
+    Editar
+</button>
 
-<button onclick="eliminarCliente('${doc.id}')">
+<button class="btnEliminar" data-id="${doc.id}">
     Eliminar
 </button>
                 </td>
