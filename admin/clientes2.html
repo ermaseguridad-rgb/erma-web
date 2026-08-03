@@ -10,68 +10,73 @@
 
 <body>
 
-<h1>Clientes</h1>
+<div class="contenedor">
 
-<p>Módulo de administración de clientes.</p>
+    <h1>Clientes</h1>
 
-<button id="btnNuevo">
-    + Nuevo Cliente
-</button>
+    <p>Módulo de administración de clientes.</p>
 
-<div id="modalCliente" class="modal" style="display:none;">
+    <button id="btnNuevo">
+        + Nuevo Cliente
+    </button>
 
-    <div class="modal-contenido">
+    <div id="modalCliente" class="modal" style="display:none;">
 
-        <h2>Nuevo Cliente</h2>
+        <div class="modal-contenido">
 
-        <input id="nombre" placeholder="Nombre del cliente">
+            <h2>Nuevo Cliente</h2>
 
-        <input id="empresa" placeholder="Empresa">
+            <input id="nombre" placeholder="Nombre del cliente">
 
-        <input id="telefono" placeholder="Teléfono">
+            <input id="empresa" placeholder="Empresa">
 
-        <input id="correo" placeholder="Correo">
+            <input id="telefono" placeholder="Teléfono">
 
-        <input id="direccion" placeholder="Dirección">
+            <input id="correo" placeholder="Correo">
 
-        <select id="estado">
+            <input id="direccion" placeholder="Dirección">
 
-            <option>Activo</option>
+            <select id="estado">
+                <option>Activo</option>
+                <option>Suspendido</option>
+            </select>
 
-            <option>Suspendido</option>
+            <br><br>
 
-        </select>
+            <button id="guardarCliente">
+                Guardar
+            </button>
 
-        <br><br>
+            <button id="cerrarModal">
+                Cancelar
+            </button>
 
-        <button id="guardarCliente">
-            Guardar
-        </button>
-
-        <button id="cerrarModal">
-            Cancelar
-        </button>
+        </div>
 
     </div>
 
+    <table id="tablaClientes">
+
+        <thead>
+
+            <tr>
+                <th>ID</th>
+                <th>Cliente</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        </tbody>
+
+    </table>
+
 </div>
-    
-<table id="tablaClientes">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Cliente</th>
-            <th>Estado</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
 
-    <tbody>
-
-    </tbody>
-</table>
-
-<script type="module" src="clientes.js"></script>
+<script src="clientes.js"></script>
 
 </body>
 </html>
