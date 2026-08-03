@@ -143,11 +143,11 @@ cargarClientes();
                 <td>${cliente.nombre}</td>
                 <td>${cliente.estado}</td>
                 <td>
-                <button onclick="alert('Editar ${doc.id}')">
+               <button onclick="editarCliente('${doc.id}')">
     Editar
 </button>
 
-<button onclick="alert('Eliminar ${doc.id}')">
+<button onclick="eliminarCliente('${doc.id}')">
     Eliminar
 </button>
                 </td>
@@ -160,6 +160,12 @@ cargarClientes();
     cargarClientes();
 
 window.eliminarCliente = async function(id) {
+
+    window.editarCliente = function(id){
+
+    alert("Editar cliente: " + id);
+
+};
 
     const confirmar = confirm("¿Eliminar este cliente?");
 
