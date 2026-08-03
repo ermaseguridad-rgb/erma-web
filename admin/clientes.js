@@ -10,6 +10,38 @@ import {
 // Módulo Clientes
 // ==========================================
 
+async function cargarClientes() {
+
+    const tbody = document.querySelector("#tablaClientes tbody");
+
+    tbody.innerHTML = "";
+
+    const consulta = await getDocs(collection(db, "clientes"));
+
+    let numero = 1;
+
+    consulta.forEach((doc) => {
+
+        const cliente = doc.data();
+
+        tbody.innerHTML += `
+            <tr>
+                <td>CL-${String(numero).padStart(3, "0")}</td>
+                <td>${cliente.nombre}</td>
+                <td>${cliente.estado}</td>
+                <td>
+                    <button>✏️</button>
+                    <button>🗑️</button>
+                </td>
+            </tr>
+        `;
+
+        numero++;
+
+    });
+
+}
+
 window.onload = function () {
 
     const btnNuevo = document.getElementById("btnNuevo");
@@ -17,7 +49,7 @@ window.onload = function () {
     const cerrar = document.getElementById("cerrarModal");
 
     if (!btnNuevo || !modal || !cerrar) {
-
+cargarClientes();
         console.error("ERMA OS: No se encontraron los elementos del modal.");
 
         return;
@@ -74,7 +106,7 @@ window.onload = function () {
             });
 
             alert("✅ Cliente guardado correctamente.");
-
+            cargarClientes();
             modal.style.display = "none";
 
         } catch (error) {
