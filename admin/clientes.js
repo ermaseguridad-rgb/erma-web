@@ -122,6 +122,34 @@ cargarClientes();
 
 }
 
+    async function cargarClientes() {
+
+    const tbody = document.querySelector("#tablaClientes tbody");
+
+    tbody.innerHTML = "";
+
+    const consulta = await getDocs(collection(db, "clientes"));
+
+    consulta.forEach((doc) => {
+
+        const cliente = doc.data();
+
+        tbody.innerHTML += `
+            <tr>
+                <td>${doc.id}</td>
+                <td>${cliente.nombre}</td>
+                <td>${cliente.estado}</td>
+                <td>
+                    <button>Editar</button>
+                    <button>Eliminar</button>
+                </td>
+            </tr>
+        `;
+
+    });
+
+}
+    cargarClientes();
     console.log("✅ ERMA OS - Clientes iniciado correctamente");
 
 };
