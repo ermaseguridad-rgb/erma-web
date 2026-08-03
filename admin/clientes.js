@@ -142,8 +142,11 @@ cargarClientes();
                 <td>${cliente.nombre}</td>
                 <td>${cliente.estado}</td>
                 <td>
-                    <button>Editar</button>
-                    <button>Eliminar</button>
+                   <button>Editar</button>
+
+<button onclick="eliminarCliente('${doc.id}')">
+    Eliminar
+</button>
                 </td>
             </tr>
         `;
@@ -152,6 +155,31 @@ cargarClientes();
 
 }
     cargarClientes();
+
+window.eliminarCliente = async function(id) {
+
+    const confirmar = confirm("¿Eliminar este cliente?");
+
+    if (!confirmar) return;
+
+    try {
+
+        await deleteDoc(doc(db, "clientes", id));
+
+        alert("✅ Cliente eliminado.");
+
+        location.reload();
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Error al eliminar.");
+
+    }
+
+};
+    
     console.log("✅ ERMA OS - Clientes iniciado correctamente");
 
 };
