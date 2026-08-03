@@ -39,7 +39,7 @@ window.onload = function () {
 
     });
 
-    const btnGuardar = document.getElementById("btnGuardar");
+    const btnGuardar = document.getElementById("guardarCliente");
 
     if (btnGuardar) {
 
